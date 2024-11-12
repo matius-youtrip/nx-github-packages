@@ -1,0 +1,39 @@
+{
+  "name": "@matius-youtrip/nx-test-lib",
+  "version": "0.0.3",
+  "dependencies": {},
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matius-youtrip/nx-github-packages.git",
+    "directory": "packages/nx-test-lib"
+  },
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo"
+  ],
+  "nx": {
+    "sourceRoot": "packages/nx-test-lib/src",
+    "targets": {
+      "test": {
+        "executor": "@nx/vite:test",
+        "outputs": [
+          "{options.reportsDirectory}"
+        ],
+        "options": {
+          "reportsDirectory": "../../coverage/packages/nx-test-lib"
+        }
+      }
+    }
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "default": "./dist/index.cjs.js"
+    }
+  },
+  "types": "./dist/index.d.ts"
+}
