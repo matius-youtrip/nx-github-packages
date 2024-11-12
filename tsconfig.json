@@ -5,6 +5,9 @@
   "references": [
     {
       "path": "./packages/nx-test-lib"
+    },
+    {
+      "path": "./packages/nx-test-lib-2"
     }
   ]
 }
